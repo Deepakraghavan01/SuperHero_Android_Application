@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoProject.View.CardViewTemplate">
+    <ContentView.Content>
+        <Frame IsClippedToBounds="True"  
+           HasShadow="True"  
+           Padding="0"  
+           BackgroundColor="White" >
+            <Frame.Margin>
+                <OnPlatform x:TypeArguments="Thickness"  
+                     Android="10"   
+                     iOS="10"/>
+            </Frame.Margin>
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                <Frame HorizontalOptions="FillAndExpand" Margin="0,0,0,0" HasShadow="False"  >
+                
+                    <Grid VerticalOptions="CenterAndExpand" Padding="0" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Row="0" Grid.Column="0" >
+                            <Frame Padding="0" Margin="0" HasShadow="True">
+                                <Image HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit">
+                                    <Image.Source>
+                                        <UriImageSource Uri="{Binding image.url}" CacheValidity="1" CachingEnabled="true"/>
+                                    </Image.Source>
+                                </Image>
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="0" Grid.Column="1"  Orientation="Vertical"  Padding="0,50,0,50">
+                            <StackLayout Orientation="Horizontal">
+                                <Label TextColor="Black" FontSize="17" FontAttributes="Bold" Text="Name :"/>
+                                <Label Text="{Binding name}"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label TextColor="Black" FontSize="17" FontAttributes="Bold" Text="Alignment :"/>
+                                <Label Text="{Binding biography.alignment}"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label TextColor="Black" FontSize="17" FontAttributes="Bold" Text="Publisher :"/>
+                                <Label Text="{Binding biography.publisher}"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label TextColor="Black" FontSize="17" FontAttributes="Bold" Text="Gender :"/>
+                                <Label Text="{Binding appearance.gender}"/>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </Grid>
+                
+            </Frame>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

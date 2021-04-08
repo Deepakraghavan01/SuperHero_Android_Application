@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GridLayout.Views.AboutPage"
+             xmlns:vm="clr-namespace:GridLayout.ViewModels"
+             xmlns:local1="clr-namespace:GridLayout.Views" 
+             xmlns:local11="clr-namespace:DemoProject.View"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical"  Spacing="10">
+                <SearchBar x:Name="SearchSuperHeros" Placeholder="Search By Superhero Name..." SearchButtonPressed="searchbar_SearchButtonPressed" />
+                    <StackLayout x:Name="SearchSuperHerosLoader"  IsVisible="false">
+                        <ActivityIndicator IsRunning="true" />
+                    </StackLayout>
+                <StackLayout x:Name="SearchSuperHerosLayout"  IsVisible="false">
+                    <StackLayout Orientation="Horizontal" >
+                        <Picker x:Name="MainPickerGender" SelectedItem="{Binding SelectedFilter}" Title="Filter By Gender" SelectedIndexChanged="OnTappingFilterItem"/>
+                        <Picker x:Name="MainPickerType" SelectedItem="{Binding SelectedFilter}" Title="Filter By Type" SelectedIndexChanged="OnTappingFilterItem"/>
+                        <Picker x:Name="MainPickerPublisher" SelectedItem="{Binding SelectedFilter}" Title="Filter By Publisher"  SelectedIndexChanged="OnTappingFilterItem"/>
+                    </StackLayout>
+                    <StackLayout  x:Name="HerosList"  IsVisible="true">
+                        <ListView x:Name="Powerstats" HasUnevenRows="True" ItemSelected="Handle_ItemSelected" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <local11:CardViewTemplate/>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                    <StackLayout x:Name="NoHeroFound"  IsVisible="false">
+                        <Label TextColor="Black" FontSize = "20"  FontAttributes="Bold" Margin="50" Text="No heros found"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

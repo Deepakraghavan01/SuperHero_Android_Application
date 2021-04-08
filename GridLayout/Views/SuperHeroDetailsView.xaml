@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GridLayout.Views.SuperHeroDetailsView"
+             Title="{Binding Result.name}">
+    <ContentPage.Content>
+        <ScrollView Grid.Row="1">
+            <RelativeLayout>
+                <Image Aspect="AspectFill" RelativeLayout.WidthConstraint=
+                "{ConstraintExpression Type=Constant, Constant=750}"
+              RelativeLayout.HeightConstraint=
+                "{ConstraintExpression Type=Constant, Constant=1000}" Opacity="0.2">
+                    <Image.Source>
+                        <UriImageSource Uri="{x:Binding Result.image.url}" CacheValidity="1" CachingEnabled="true"/>
+                    </Image.Source>
+                </Image>
+                <StackLayout Orientation="Vertical" Padding="5,5,5,5">
+                    <StackLayout Orientation="Horizontal">
+                        <Label TextColor="Black" FontSize="17" FontAttributes="Bold">Name:</Label>
+                    <Label TextColor="Black" Text="{x:Binding Result.name}" />
+                </StackLayout>
+
+                    <Label TextColor="Black" FontSize="15" FontAttributes="Bold">POWERSTATS</Label>
+                <StackLayout Padding="50,0,0,0">
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Intelligence:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.powerstats.intelligence}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Strength:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.powerstats.strength}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Speed:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.powerstats.speed}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Durability:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.powerstats.durability}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Power:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.powerstats.power}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Combat:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.powerstats.combat}" />
+                    </StackLayout>
+
+                </StackLayout>
+                    <Label TextColor="Black" FontSize="15" FontAttributes="Bold">BIOGRAPHY</Label>
+                <StackLayout Padding="50,0,0,0">
+
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Full-Name:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.biography.FullName}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Alter-Egos:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.biography.AlterEgos}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Place-of-Birth:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.biography.PlaceOfBirth}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">First-Appearance:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.biography.FirstAppearance}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Publisher:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.biography.publisher}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Alignment:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.biography.alignment}" />
+                    </StackLayout>
+
+                </StackLayout>
+                    <Label TextColor="Black" FontSize="15" FontAttributes="Bold">APPEARANCE</Label>
+                <StackLayout Padding="50,0,0,0">
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Gender:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.appearance.gender}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Race:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.appearance.race}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Height:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.appearance.height[0]}" />
+                        <Label TextColor="Black" Text="{x:Binding Result.appearance.height[1]}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Weight:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.appearance.weight[0]}" />
+                        <Label TextColor="Black" Text="{x:Binding Result.appearance.weight[1]}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Eye-Color:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.appearance.EyeColor}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Hair-Color:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.appearance.HairColor}" />
+                    </StackLayout>
+                </StackLayout>
+                    <Label TextColor="Black" FontSize="15" FontAttributes="Bold">WORK</Label>
+                <StackLayout Padding="50,0,0,0">
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Occupation:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.work.occupation}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Base:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.work.base}" />
+                    </StackLayout>
+                </StackLayout>
+                    <Label TextColor="Black" FontSize="15" FontAttributes="Bold">CONNECTIONS</Label>
+                <StackLayout Padding="50,0,0,0">
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Group-Affiliation:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.connections.group-affiliation}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                            <Label TextColor="Black" FontSize="15" FontAttributes="Bold">Relatives:</Label>
+                        <Label TextColor="Black" Text="{x:Binding Result.connections.relatives}" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+                </RelativeLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>
